@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js" >
+<html lang="en" class="no-js">
 <head>
-
-    <!--- basic page needs
-    ================================================== -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Projects - Seba</title>
@@ -13,263 +10,264 @@
         document.documentElement.classList.add('js');
     </script>
 
-    <!-- CSS
-    ================================================== -->
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- favicons
-    ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
+    <style>
+        /* --- Layout Grids --- */
+        .unified-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+            width: 100%;
+        }
 
+        /* --- Custom Card Design --- */
+        .unified-card {
+            background: #ffffff;
+            padding: 45px 35px;
+            border-radius: 20px;
+            border: 1px solid rgba(0,0,0,0.06);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* --- THE UNIQUE HOVER: Deep Midnight Gradient --- */
+        .unified-card:hover {
+            transform: translateY(-15px);
+            /* This is a unique 'Night Sky' gradient */
+            background: linear-gradient(145deg, #10141d 0%, #1c222d 100%);
+            border-color: #ff9200;
+            box-shadow: 0 25px 50px rgba(255, 146, 0, 0.2);
+        }
+
+        /* Text transitions */
+        .unified-card h3, .unified-card h4 {
+            font-size: 2.2rem;
+            margin-top: 0;
+            transition: color 0.3s;
+        }
+        
+        .unified-card p, .unified-card ul li, .unified-card cite {
+            transition: color 0.3s;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .unified-card .label {
+            color: #ff9200;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            letter-spacing: 0.15em;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        /* Hover Text Color Logic */
+        .unified-card:hover h3, 
+        .unified-card:hover h4, 
+        .unified-card:hover p, 
+        .unified-card:hover ul li,
+        .unified-card:hover cite strong {
+            color: #ffffff !important;
+        }
+
+        .unified-card:hover p {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+
+        /* Lists */
+        .card-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        .card-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+        }
+        .card-list li::before {
+            content: "•";
+            color: #ff9200;
+            position: absolute;
+            left: 0;
+        }
+
+        .footer-line {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0,0,0,0.08);
+            transition: border-color 0.3s;
+        }
+        .unified-card:hover .footer-line {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Section Tweaks */
+        .s-testimonials {
+            background-color: #fffaf4; /* Subtle warm background */
+            padding: 100px 0;
+        }
+    </style>
 </head>
-
 
 <body id="top">
 
-
-    <!-- preloader
-    ================================================== -->
-    <div id="preloader">
-        <div id="loader" class="dots-fade">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-
-
-    <!-- page wrap
-    ================================================== -->
     <div id="page" class="s-pagewrap">
 
-        <!-- # site header 
-        ================================================== -->
         <header class="s-header">
-
             <div class="row s-header__inner width-sixteen-col">
-
                 <div class="s-header__block">
                     <div class="s-header__logo">
                         <a class="logo" href="index.html">
-                            <span style="font-weight: bold; font-size: 24px; color: #ff9200;">SEBA.</span>
+                            <span style="font-weight: bold; font-size: 24px; color: #ff9200;">SEBA</span>
                         </a>
                     </div>
-
-                    <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
-                </div> <!-- end s-header__block -->
-
+                </div>
                 <nav class="s-header__nav">
-    
                     <ul class="s-header__menu-links">
                         <li><a href="about.html">About</a></li>
                         <li class="current"><a href="services.html">Projects</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                    </ul> <!-- s-header__menu-links -->
-
-                    <div class="s-header__contact">
-                        <a href="contact.html" class="btn btn--primary s-header__contact-btn">Let's Work Together</a>                        
-                    </div> <!-- s-header__contact -->
-    
-                </nav> <!-- end s-header__nav -->
-
-            </div> <!-- end s-header__inner -->
-
-        </header> <!-- end s-header -->
-
-        <!-- # site main content
-        ================================================== -->
-        <section id="content" class="s-content">
-
-               <section class="s-pageheader pageheader">
-                    <div class="row">
-                        <div class="column xl-12">
-                            <h1 class="page-title">
-                                <span class="page-title__small-type text-pretitle">Projects</span>
-                                Simple & User friendly Projects.
-                            </h1>
-                            
-                        </div>
-                    </div>
-               </section> <!-- pageheader -->  
-
-               <section class="s-pagecontent pagecontent">
-
-                    <div class="row pageintro">
-                        <div class="column xl-6 lg-12">
-                            <h2 class="text-display-title">Some impactful projects to help your business</h2>
-                        </div>
-                        <div class="column xl-6 lg-12 u-flexitem-x-right">
-                            <p class="lead">
-                            I have tried to build some user-friendly projects that are simple ,readable and easy to understand . Some of these have quite a good review. As a beginner I always try to improve my previous works and try to fulfil user demands.
-                            </p>
-                        </div>                       
-                    </div>  <!-- pageintro -->       
-
-                    <div class="row">
-                        <div class="column xl-12 grid-block">             
-                            
-                            <div class="grid-full grid-list-items list-items show-ctr">
-                                
-                                <div class="grid-list-items list-items">
-
-    <div class="grid-list-items__item list-items__item">
-        <div class="list-items__item-header">
-            <h6 class="list-items__item-small-title" style="color: #f1901c;">Web Development</h6>
-        </div>
-        <p>
-        Building functional websites using HTML, CSS, and JavaScript. I focus on making
-        interfaces that are easy to use and responsive across different devices.
-        </p>
-        <ul class="list-items__item-list">
-            <li>Student Management Portals</li>
-            <li>Portfolio Design</li>
-            <li>Front-end Logic</li>
-        </ul>
-    </div>
-
-    <div class="grid-list-items__item list-items__item">
-        <div class="list-items__item-header">
-            <h6 class="list-items__item-small-title" style="color: #f1901c;">Logic & Algorithms</h6>
-        </div>
-        <p>
-        Applying C++ and Python to solve university-level problems. I enjoy the process
-        of debugging and optimizing code to make it run more efficiently.
-        </p>
-        <ul class="list-items__item-list">
-            <li>Object-Oriented Programming</li>
-            <li>Data Structures</li>
-            <li>Basic Problem Solving</li>
-        </ul>
-    </div>
-
-    <div class="grid-list-items__item list-items__item">
-        <div class="list-items__item-header">
-            <h6 class="list-items__item-small-title" style="color: #f1901c;">Database Systems</h6>
-        </div>
-        <p>
-        Creating and managing databases using MySQL. I have experience designing
-        schemas and writing basic queries for university assignments.
-        </p>
-        <ul class="list-items__item-list">
-            <li>Schema Design</li>
-            <li>SQL Queries</li>
-            <li>Entity Relationships</li>
-        </ul>
-    </div>
-
-</div>
-                        </div> <!-- end grid-block-->
-                    </div> <!-- end row -->
-
-               </section> <!-- pagecontent -->
-
-               <section class="s-testimonials">
-
-                    <div class="s-testimonials__header row row-x-center text-center">
-                        <div class="column xl-8 lg-12">
-        
-                            <p class="text-pretitle">
-                            Simple Projects!
-                            </p>
-                            <h3>
-                            Project Fields and work:
-                            </h3>                        
-        
-                        </div>
-                    </div> <!--end s-testimonials__header -->
-
-                    <div class="row s-testimonials__content">
-                        <div class="column xl-12 testimonials">
-
-                            <div class="swiper-container testimonials__slider page-slider">
-
-                                <div class="swiper-wrapper">
-
-                <div class="testimonials__slide swiper-slide">
-                    <p>
-                        Designed and implemented a robust database system to manage university elections,
-                        ensuring secure, accurate, and efficient vote tracking through optimized SQL queries.
-                    </p>
-                    <div class="testimonials__author">
-                        <cite class="testimonials__cite">
-                            <strong>University Election System</strong>
-                            <span>Database Management (SQL)</span>
-                        </cite>
-                    </div>
-                </div>
-
-                <div class="testimonials__slide swiper-slide">
-                    <p>
-                        Developed a scalable backend for property listing and user interaction,
-                        integrating RESTful APIs and database operations for seamless functionality.
-                    </p>
-                    <div class="testimonials__author">
-                        <cite class="testimonials__cite">
-                            <strong>Real Estate Portal</strong>
-                            <span>Backend (Node.js/Express)</span>
-                        </cite>
-                    </div>
-                </div>
-
-                <div class="testimonials__slide swiper-slide">
-                    <p>
-                        Built a comprehensive Library Management System using OOP principles.
-                        Implemented features for book issuance and inventory management
-                        focusing on code reusability and modular design.
-                    </p>
-                    <div class="testimonials__author">
-                        <cite class="testimonials__cite">
-                            <strong>Library Management System</strong>
-                            <span>OOP (Java/C++)</span>
-                        </cite>
-                    </div>
-                </div>
-                                </div>
-
-                        </div> <!-- testimonials -->
-                    </div> <!--end s-testimonials__content -->
-
-               </section> <!-- end s-testimonials -->
-
-        </section> <!-- s-content-->
-
-        <!-- # cta
-        ================================================== -->
-        <section id="cta" class="s-cta">
-
-            <div class="row row-x-center text-center">
-                <div class="column xl-8 lg-12">
-
-                    <div class="s-cta__content">
-                        <h2 class="text-display-title">
-                        Let's build something together.
-                        </h2>
-                        <p class="lead">
-                        I am currently seeking internship opportunities and open-source collaborations. If you're looking for a passionate developer to join your team, I'd love to hear from you.
-                        </p>
-                        <a href="contact.html" class="btn btn--primary">Let's Work Together</a>
-                    </div>
-
-                </div>
+                    </ul>
+                </nav>
             </div>
+        </header>
 
-        </section> <!-- end s-cta -->
+        <section id="content" class="s-content">
+            
+            <section class="s-pageheader pageheader">
+                <div class="row">
+                    <div class="column xl-12">
+                        <h1 class="page-title">
+                            <span class="page-title__small-type text-pretitle">Portfolio</span>
+                            My Coding Projects.
+                        </h1>
+                    </div>
+                </div>
+            </section>
 
+            <section class="s-pagecontent pagecontent">
+                <div class="row pageintro u-add-bottom">
+                    <div class="column xl-6 lg-12">
+                        <h2 class="text-display-title">Impactful projects designed with precision.</h2>
+                    </div>
+                    <div class="column xl-6 lg-12">
+                        <p class="lead u-flexitem-x-right">I focus on building user-friendly projects that are simple, readable, and easy to understand. As a beginner, I am constantly improving my previous work to fulfill user demands.</p>
+                    </div>                       
+                </div>
 
-        <!-- # footer 
-        ================================================== -->
+                <div class="row">
+                    <div class="column xl-12">
+                        <div class="unified-grid">
+                            
+                            <div class="unified-card">
+                                <div>
+                                    <span class="label">01.</span>
+                                    <h3>Web Development</h3>
+                                    <p>Building functional websites using HTML, CSS, and JavaScript. I focus on making interfaces that are easy to use and responsive.</p>
+                                </div>
+                                <ul class="card-list">
+                                    <li>Student Management Portals</li>
+                                    <li>Portfolio Design</li>
+                                    <li>Front-end Logic</li>
+                                </ul>
+                            </div>
+
+                            <div class="unified-card">
+                                <div>
+                                    <span class="label">02.</span>
+                                    <h3>Logic & Algorithms</h3>
+                                    <p>Applying C++ and Python to solve university-level problems. I enjoy the process of debugging and optimizing code.</p>
+                                </div>
+                                <ul class="card-list">
+                                    <li>Object-Oriented Programming</li>
+                                    <li>Data Structures</li>
+                                    <li>Basic Problem Solving</li>
+                                </ul>
+                            </div>
+
+                            <div class="unified-card">
+                                <div>
+                                    <span class="label">03.</span>
+                                    <h3>Database Systems</h3>
+                                    <p>Creating and managing databases using MySQL. I have experience designing schemas and writing basic queries.</p>
+                                </div>
+                                <ul class="card-list">
+                                    <li>Schema Design</li>
+                                    <li>SQL Queries</li>
+                                    <li>Entity Relationships</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="s-testimonials">
+                <div class="row text-center">
+                    <div class="column xl-12">
+                        <p class="text-pretitle" style="color: #ff9200;">Showcase</p>
+                        <h3 style="font-size: 3.2rem; margin-bottom: 40px;">Detailed Project Work</h3>                        
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column xl-12">
+                        <div class="unified-grid">
+
+                            <div class="unified-card">
+                                <p>"Designed and implemented a robust database system to manage university elections, ensuring secure and efficient vote tracking."</p>
+                                <div class="footer-line">
+                                    <cite>
+                                        <strong>University Election System</strong>
+                                        <span class="label" style="margin-top:5px">SQL Database</span>
+                                    </cite>
+                                </div>
+                            </div>
+
+                            <div class="unified-card">
+                                <p>"I developed the backend for a real estate portal. I made sure the website can handle many users at once and that the data flows perfectly between the user and the server."</p>
+                                <div class="footer-line">
+                                    <cite>
+                                        <strong>Real Estate Portal</strong>
+                                        <span class="label" style="margin-top:5px">Node.js/Express</span>
+                                    </cite>
+                                </div>
+                            </div>
+
+                            <div class="unified-card">
+                                <p>"Built a comprehensive Library Management System using OOP principles, focusing on modular design and code reusability."</p>
+                                <div class="footer-line">
+                                    <cite>
+                                        <strong>Library Management System</strong>
+                                        <span class="label" style="margin-top:5px">Java/C++ OOP</span>
+                                    </cite>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+
         <footer class="s-footer">
             <div class="row s-footer__content">
-                <div class="column xl-6 lg-6 md-12 s-footer__block s-footer__about">                    
-                    <h3>About Monica</h3>
-                    <p>
-Seba | 3rd-Year CSE Student at UAP. Focused on Full-Stack development and algorithmic problem solving. Passionate about learning and building tools that make a difference
-                    </p>               
-                </div>                
+                <div class="column xl-6 lg-6 md-12 s-footer__block s-footer__about">
+                    <h3>About Seba</h3>
+                    <p>Seba | 3rd-Year CSE Student at UAP. Focused on Full-Stack development and algorithmic problem solving.</p>
+                </div>
                 <div class="column xl-3 lg-6 md-12 s-footer__block s-footer__site-links">
                     <h3>Site Links</h3>
                     <ul class="link-list">
@@ -279,13 +277,11 @@ Seba | 3rd-Year CSE Student at UAP. Focused on Full-Stack development and algori
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-
-            </div>    
-            
+            </div>
             <div class="row s-footer__bottom">
                 <div class="column xl-6 lg-12">
                     <ul class="s-footer__social social-list">
-                       <li>
+                        <li>
                             <a href="https://www.facebook.com/sadiyaakter.seba" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325,1.42-3.592,3.5-3.592 c0.699-0.002,1.399,0.034,2.095,0.107v2.42h-1.435c-1.128,0-1.348,0.538-1.348,1.325v1.735h2.697l-0.35,2.725h-2.348V21H20 c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z"></path></svg>
                                 <span class="u-screen-reader-text">Facebook</span>
@@ -298,19 +294,15 @@ Seba | 3rd-Year CSE Student at UAP. Focused on Full-Stack development and algori
                                 <span class="u-screen-reader-text">Instagram</span>
                             </a>
                         </li>
-                    </ul> <!-- end s-footer__social -->
+                    </ul>
                 </div>
-
+                
             </div>
-            
-        </footer> <!-- end s-footer -->
+        </footer>
 
-    </div> <!-- end page-wrap -->
+    </div>
 
-    <!-- Java Script
-    ================================================== -->
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-
 </body>
 </html>
