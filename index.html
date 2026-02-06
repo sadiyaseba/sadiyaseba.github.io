@@ -1,526 +1,386 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js" >
+<html lang="en">
+
 <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Seba</title>
-
-    <script>
-        document.documentElement.classList.remove('no-js');
-        document.documentElement.classList.add('js');
-    </script>
-
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/styles.css">
-
-    <style>
-        /* --- Technology Icons - FIXED: Removed Grayscale & Added Text Alignment --- */
-        .clients-list {
-            display: flex;
-            flex-wrap: wrap; 
-            justify-content: center;
-            gap: 40px; /* Increased gap for better spacing with text */
-        }
-
-        .clients-list__item {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            filter: none !important;  
-            opacity: 1 !important;      
-        }
-
-        /* Added this to stack icon and text */
-        .clients-list__item a {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-        }
-        
-        .clients-list__item img {
-            width: 80px; 
-            height: 80px; /* Fixed height for uniform alignment */
-            object-fit: contain;
-            margin-bottom: 10px; /* Space between icon and text */
-        }
-
-        /* Styling for the new headings */
-        .clients-list__item span {
-            display: block;
-            font-size: 14px;
-            font-weight: bold;
-            color: #333;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .clients-list__item:hover {
-            transform: scale(1.1) translateY(-10px);
-        }
-
-        .clients-list__item:hover span {
-            color: #ff9200; /* Matches your theme color on hover */
-        }
-
-        /* --- Project/Testimonial Card Styling --- */
-        .swiper-wrapper {
-            display: flex;
-            flex-wrap: wrap; 
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .testimonials__slide {
-            background: #ffffff;
-            padding: 40px !important;
-            border-radius: 20px;
-            border: 1px solid rgba(0,0,0,0.05);
-            transition: all 0.5s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            flex: 1 1 300px; 
-            max-width: 400px;
-            margin-bottom: 20px;
-        }
-
-        .testimonials__slide:hover {
-            background: linear-gradient(145deg, #10141d 0%, #1c222d 100%);
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(255, 146, 0, 0.15);
-        }
-
-        .testimonials__slide:hover p {
-            color: rgba(255, 255, 255, 0.85) !important;
-        }
-
-        .testimonials__slide:hover strong {
-            color: #ffffff !important;
-        }
-
-        .testimonials__slide:hover span {
-            color: #ff9200 !important;
-        }
-
-        /* Floating Animation for Intro Image */
-        .s-intro__content-media img {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-    </style>
-
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seba | CS Student & Web Developer</title>
+  <meta name="description"
+    content="Portfolio of Seba - 3rd Year Computer Science & Engineering student at UAP. Focused on Full-Stack development and algorithmic problem solving." />
+  <link rel="icon" type="image/x-icon" href="/public/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="src/style.css" />
+  <!-- DevIcons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <!-- Lucide Icons Script (Development only, usually bundled) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
+<body>
+  <!-- ========== HEADER ========== -->
+  <header class="header">
+    <a href="#" class="header__logo">Seba<span>.</span></a>
+    <nav class="header__nav">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<body id="top">
-
-    
-    <div id="preloader">
-        <div id="loader" class="dots-fade">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <!-- Floating decorative elements -->
+    <div class="hero__floating-shapes">
+      <div class="floating-orb floating-orb--1"></div>
+      <div class="floating-orb floating-orb--2"></div>
+      <div class="floating-orb floating-orb--3"></div>
+      <div class="floating-ring floating-ring--1"></div>
+      <div class="floating-ring floating-ring--2"></div>
     </div>
+    <div class="hero__container">
+      <img src="./public/seba.jpg" alt="Seba" class="hero__image" />
+      <div class="hero__content">
 
+        <h1 class="hero__name">Sadiya Seba</h1>
+        <h2 class="hero__title">I turn ideas into functional software and user-friendly web experiences.</h2>
+        <p class="hero__description">
+          I'm a CSE student at University of Asia Pacific who is passionate about building interactive web
+          applications and solving algorithmic challenges.
+        </p>
+        <div class="hero__cta">
+          <a href="#projects" class="btn btn--primary">View Projects <i data-lucide="arrow-right"
+              class="btn-icon"></i></a>
+          <a href="#contact" class="btn btn--secondary">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <div id="page" class="s-pagewrap ss-home">
+  <!-- ========== ABOUT ========== -->
+  <section class="section" id="about">
+    <h2 class="section__title">About Me</h2>
+    <div class="about__container">
+      <div class="about__content">
+        <p class="about__text">
+          I'm a 3rd year Computer Science & Engineering student with a strong interest in web development and software
+          engineering. I enjoy turning ideas into functional applications and writing clean, maintainable code. My
+          academic journey has helped me build a solid foundation in data structures, algorithms, and core programming
+          concepts. I'm currently focused on improving my full-stack development skills and preparing for real-world
+          software challenges.
+        </p>
+      </div>
+      <div class="hobbies-section">
+        <h3 class="hobbies__title-catchy">Beyond the Code</h3>
+        <div class="hobbies-grid">
+          <div class="hobby-card">
+            <i data-lucide="plane" class="hobby-icon"></i>
+            <span class="hobby-name">Travelling</span>
+          </div>
+          <div class="hobby-card">
+            <i data-lucide="music" class="hobby-icon"></i>
+            <span class="hobby-name">Listening to Music</span>
+          </div>
+          <div class="hobby-card">
+            <i data-lucide="scroll" class="hobby-icon"></i>
+            <span class="hobby-name">Ancient History</span>
+          </div>
+          <div class="hobby-card">
+            <i data-lucide="tv" class="hobby-icon"></i>
+            <span class="hobby-name">Anime & Historical Series</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
 
+  <!-- ========== EDUCATION (Shifted Up) ========== -->
+  <section class="section section--muted" id="education">
+    <h2 class="section__title">Education</h2>
+    <div class="education-timeline">
+      <!-- Item 1 -->
+      <article class="education-card">
+        <div class="education-card__icon-wrapper">
+          <i data-lucide="graduation-cap" class="education-card__icon"></i>
+        </div>
+        <div class="education-card__content">
+          <h3 class="education-card__degree">B.Sc. in Computer Science & Engineering</h3>
+          <p class="education-card__institution">University of Asia Pacific (UAP)</p>
+          <div class="education-card__meta">
+            <span class="education-card__year"><i data-lucide="calendar" class="meta-icon"></i> [2024-2026] -
+              Present</span>
+            <span class="education-card__status">3rd Year</span>
+          </div>
+        </div>
+      </article>
+      <!-- Item 2 -->
+      <article class="education-card">
+        <div class="education-card__icon-wrapper">
+          <i data-lucide="book-open" class="education-card__icon"></i>
+        </div>
+        <div class="education-card__content">
+          <h3 class="education-card__degree">Higher Secondary Certificate (HSC)</h3>
+          <p class="education-card__institution">Birshreshtha Munshi Abdur Rouf Public College</p>
+          <div class="education-card__meta">
+            <span class="education-card__year"><i data-lucide="calendar" class="meta-icon"></i> 2022</span>
+            <span class="education-card__group">Science Group</span>
+          </div>
+        </div>
+      </article>
+      <!-- Item 3 -->
+      <article class="education-card">
+        <div class="education-card__icon-wrapper">
+          <i data-lucide="school" class="education-card__icon"></i>
+        </div>
+        <div class="education-card__content">
+          <h3 class="education-card__degree">Secondary School Certificate (SSC)</h3>
+          <p class="education-card__institution">Thakurgaon Govt. Girls' High School</p>
+          <div class="education-card__meta">
+            <span class="education-card__year"><i data-lucide="calendar" class="meta-icon"></i> 2020</span>
+            <span class="education-card__group">Science Group</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
 
-        <header class="s-header">
+  <!-- ========== ACHIEVEMENTS ========== -->
+  <section class="section" id="achievements">
+    <h2 class="section__title">Achievements</h2>
+    <p class="section__subtitle">My small academic achievements. I am continuing to work hard to add more in this list
+      both
+      academic and
+      non-academic!</p>
+    <div class="achievements-grid">
+      <div class="achievement-card">
+        <div class="achievement-img-wrapper">
+          <img src="./public/dean.jpg" alt="Dean's Honor" class="achievement-img" loading="lazy">
+          <div class="achievement-glow"></div>
+        </div>
+        <span class="achievement-label">Dean's Honor</span>
+      </div>
+      <div class="achievement-card">
+        <div class="achievement-img-wrapper">
+          <img src="./public/vc1.jpg" alt="VC's Award" class="achievement-img" loading="lazy">
+          <div class="achievement-glow"></div>
+        </div>
+        <span class="achievement-label">VC's Award</span>
+      </div>
+      <div class="achievement-card">
+        <div class="achievement-img-wrapper">
+          <img src="./public/vc2.jpg" alt="VC's Award" class="achievement-img" loading="lazy">
+          <div class="achievement-glow"></div>
+        </div>
+        <span class="achievement-label">VC's Award</span>
+      </div>
+    </div>
+  </section>
 
-            <div class="row s-header__inner width-sixteen-col">
+  <!-- ========== TECHNICAL SKILLS ========== -->
+  <section class="section" id="skills">
+    <h2 class="section__title">Technical Skills</h2>
+    <div class="skills-grid-modern">
+      <!-- Languages -->
+      <div class="skill-group">
+        <div class="skill-group__header">
+          <i data-lucide="code-2" class="skill-group__icon"></i>
+          <h3 class="skill-group__title">Languages</h3>
+        </div>
+        <p class="skill-group__description">Proficient in multiple programming languages, focusing on efficiency and
+          algorithmic problem-solving.</p>
+        <div class="skill-group__tags">
+          <span class="skill-pill"><i class="devicon-c-plain colored"></i> C</span>
+          <span class="skill-pill"><i class="devicon-cplusplus-plain colored"></i> C++</span>
+          <span class="skill-pill"><i class="devicon-python-plain colored"></i> Python</span>
+          <span class="skill-pill"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+        </div>
+      </div>
+      <!-- Web Tech -->
+      <div class="skill-group">
+        <div class="skill-group__header">
+          <i data-lucide="globe" class="skill-group__icon"></i>
+          <h3 class="skill-group__title">Web Tech</h3>
+        </div>
+        <p class="skill-group__description">Building responsive and interactive web experiences using modern frameworks
+          and standard practices.</p>
+        <div class="skill-group__tags">
+          <span class="skill-pill"><i class="devicon-html5-plain colored"></i> HTML5</span>
+          <span class="skill-pill"><i class="devicon-css3-plain colored"></i> CSS3</span>
+          <span class="skill-pill"><i class="devicon-nodejs-plain colored"></i> Node.js (Basic)</span>
+        </div>
+      </div>
+      <!-- Database -->
+      <div class="skill-group">
+        <div class="skill-group__header">
+          <i data-lucide="database" class="skill-group__icon"></i>
+          <h3 class="skill-group__title">Database</h3>
+        </div>
+        <p class="skill-group__description">Designing efficient schemas and managing data with SQL and NoSQL databases
+          for robust applications.</p>
+        <div class="skill-group__tags">
+          <span class="skill-pill"><i class="devicon-mysql-plain colored"></i> MySQL</span>
+          <span class="skill-pill"><i data-lucide="layers"></i> Schema Design</span>
+        </div>
+      </div>
+      <!-- Tools -->
+      <div class="skill-group">
+        <div class="skill-group__header">
+          <i data-lucide="wrench" class="skill-group__icon"></i>
+          <h3 class="skill-group__title">Tools</h3>
+        </div>
+        <p class="skill-group__description">Utilizing industry-standard tools for version control, collaborative
+          development, and clean coding.</p>
+        <div class="skill-group__tags">
+          <span class="skill-pill"><i class="devicon-vscode-plain colored"></i> VS Code</span>
+          <span class="skill-pill"><i class="devicon-git-plain colored"></i> Git</span>
+          <span class="skill-pill"><i class="devicon-github-original colored"></i> GitHub</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                <div class="s-header__block">
-                    
+  <!-- ========== RESEARCH ROADMAP ========== -->
+  <section class="section section--muted research" id="research">
+    <h2 class="section__title">Research Focus</h2>
+    <p class="section__subtitle">Currently researching on Cryptocurrency & P2P Systems</p>
 
-                    <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
-                </div> <nav class="s-header__nav">
-    
-                    <ul class="s-header__menu-links">
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Projects</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul> <div class="s-header__contact">
-                        <a href="contact.html" class="btn btn--primary s-header__contact-btn">Let's Work Together</a>                        
-                    </div> </nav> </div> </header> <section id="content" class="s-content">
+    <div class="research-roadmap">
+      <div class="roadmap-line"></div>
 
-            <section id="intro" class="s-intro">
+      <!-- Node 1 -->
+      <div class="roadmap-node">
+        <div class="roadmap-node__icon">
+          <i data-lucide="network"></i>
+        </div>
+        <div class="roadmap-node__content">
+          <h3 class="roadmap-node__title">Network Architecture</h3>
+          <p class="roadmap-node__text">Foundational P2P structures and decentralized topologies.</p>
+        </div>
+      </div>
 
-                <div class="row s-intro__content width-sixteen-col">
+      <!-- Node 2 -->
+      <div class="roadmap-node">
+        <div class="roadmap-node__icon">
+          <i data-lucide="shield-check"></i>
+        </div>
+        <div class="roadmap-node__content">
+          <h3 class="roadmap-node__title">Consensus Algorithms</h3>
+          <p class="roadmap-node__text">Trustless validation and decentralized agreement mechanisms.</p>
+        </div>
+      </div>
 
-                    <div class="column lg-12 s-intro__content-inner grid-block">
-                        
-                        <div class="s-intro__content-text">
-                            <div class="s-intro__content-pretitle text-pretitle">Hello, I'm Seba</div>
-                            <h1 class="s-intro__content-title">
-                            I turn ideas into <br>
-                            functional software <br>
-                                and user-friendly <br>
-                                    web experiences.
+      <!-- Node 3 -->
+      <div class="roadmap-node">
+        <div class="roadmap-node__icon">
+          <i data-lucide="lock"></i>
+        </div>
+        <div class="roadmap-node__content">
+          <h3 class="roadmap-node__title">Cryptographic Protocols</h3>
+          <p class="roadmap-node__text">Transaction security and privacy-preserving primitives.</p>
+        </div>
+      </div>
 
-                            </h1>
-                        </div> <div class="s-intro__content-media"> 
-                            <div class="s-intro__content-media-inner">                               
-                                <img src="images/img_1.png" alt="">
-                                <div class="lines">                               
-                                    <span></span>                                   
-                                </div>
-                            </div>
-                        </div> <div class="s-intro__scroll-down">
-                            <a href="#about" class="smoothscroll">
-                                <div class="scroll-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#ff9200" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 13 12 18 17 13"></polyline><line x1="12" y1="18" x2="12" y2="6"></line></svg>
-                                </div>
-                                <span>Scroll for more</span>
-                            </a>
-                        </div> </div> </div> </section> <section id="about" class="s-about target-section">
+      <!-- Node 4 -->
+      <div class="roadmap-node">
+        <div class="roadmap-node__icon">
+          <i data-lucide="zap"></i>
+        </div>
+        <div class="roadmap-node__content">
+          <h3 class="roadmap-node__title">Scalability Optimization</h3>
+          <p class="roadmap-node__text">High-throughput architectures and network performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                <div class="row s-about__content width-sixteen-col">
-                    <div class="column grid-block grid-section-split">
+  <!-- ========== PROJECTS ========== -->
+  <section class="section section--muted" id="projects">
+    <h2 class="section__title">Featured Projects</h2>
+    <div class="projects-grid">
+      <article class="project-card">
+        <div class="project-card__image project-card__image--rose">
+          <i data-lucide="vote" class="project-icon"></i>
+        </div>
+        <div class="project-card__content">
+          <h3 class="project-card__title">University Election System</h3>
+          <p class="project-card__description">Designed a robust database system to manage university elections with
+            secure vote tracking.</p>
+          <div class="project-card__tags">
+            <span class="tag">Database</span>
+            <span class="tag">SQL</span>
+          </div>
+        </div>
+      </article>
+      <article class="project-card">
+        <div class="project-card__image project-card__image--maroon">
+          <i data-lucide="house" class="project-icon"></i>
+        </div>
+        <div class="project-card__content">
+          <h3 class="project-card__title">Property Listing Backend</h3>
+          <p class="project-card__description">Built the backend for a property website enabling users to list homes and
+            interact smoothly.</p>
+          <div class="project-card__tags">
+            <span class="tag">Node.js</span>
+            <span class="tag">Backend</span>
+          </div>
+        </div>
+      </article>
+      <article class="project-card">
+        <div class="project-card__image project-card__image--warm">
+          <i data-lucide="book-open" class="project-icon"></i>
+        </div>
+        <div class="project-card__content">
+          <h3 class="project-card__title">Library Management System</h3>
+          <p class="project-card__description">Built with OOP principles featuring book issuance and inventory
+            management.</p>
+          <div class="project-card__tags">
+            <span class="tag">Python</span>
+            <span class="tag">OOP</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
 
-                        <img src="images/geometric_shape.svg" alt="" class="s-about__content-imgbg">
+  <!-- ========== CONTACT ========== -->
+  <section class="section contact" id="contact">
+    <h2 class="section__title">Let's Build Something Together</h2>
+    <p class="contact__description">I'm seeking internship opportunities and open-source collaborations. If you're
+      looking for a passionate developer, I'd love to hear from you!</p>
+    <a href="mailto:sadiyaseba@example.com" class="btn btn--primary">
+      <span>Get In Touch</span>
+      <i data-lucide="mail" class="btn-icon"></i>
+    </a>
+    <div class="contact__socials">
+      <a href="https://www.facebook.com/sadiyaakter.seba" target="_blank" rel="noopener noreferrer" class="social-link"
+        aria-label="Facebook">
+        <i data-lucide="facebook"></i>
+      </a>
+      <a href="https://www.instagram.com/_na_biiiieee_" target="_blank" rel="noopener noreferrer" class="social-link"
+        aria-label="Instagram">
+        <i data-lucide="instagram"></i>
+      </a>
+      <a href="https://github.com/sadiyaseba" target="_blank" rel="noopener noreferrer" class="social-link"
+        aria-label="GitHub">
+        <i data-lucide="github"></i>
+      </a>
+    </div>
+  </section>
 
-                        <div class="section-header grid-section-split__header">
-                            <div class="text-pretitle">About</div>                           
-                            <h2 class="text-display-title">
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <p class="footer__text">&copy; 2026 Seba. All rights reserved.</p>
+  </footer>
 
-                            Computer Science <br>
-                             Student & <br>
-                              Web Developer.
-
-                            </h2>                           
-                        </div> <div class="s-about__content-main grid-section-split__primary">
-                            <p>
-                                I’m Seba, a 3rd year Computer Science & Engineering student with a strong interest in
-                                web development and software engineering. I enjoy turning ideas into functional
-                                 applications and writing clean, maintainable code.
-                            </p>
-
-<p>
-My academic journey has helped me build a solid foundation in data structures,
-algorithms, and core programming concepts. Alongside my studies, I actively work on
-personal projects to sharpen my practical skills and explore modern technologies.
-</p>
-
-<p>
-I’m currently focused on improving my full-stack development skills and preparing
-myself for internships and real-world software challenges. I believe in continuous
-learning and growing through hands-on experience.
-</p>
-
-                        </div> <div class="s-about__content-btn grid-section-split__bottom">
-                            <a href="#expertise" class="btn btn--stroke u-fullwidth">Explore My Skills!</a>
-
-                            <ul class="s-about__social social-list">
-                                <li>
-                                     <a href="https://github.com/sadiyaseba" target="_blank" title="GitHub" aria-label="GitHub">
-                                         <i class="fab fa-github"></i>
-                                     </a>
-                                </li>
-                                <li>
-                                     <a href="mailto:23201070@gmail.com" title="Email" aria-label="Email">
-                                         <i class="fas fa-envelope"></i>
-                                     </a>
-                                </li>
-
-
-                            </ul> </div> </div> </div>
-                
-            </section> <section id="expertise" class="s-expertise">
-
-                <div class="row s-expertise__content width-sixteen-col">
-                    <div class="column xl-12 grid-block grid-section-split">
-
-                        <div class="section-header grid-section-split__header">
-                            <div class="text-pretitle">Expertise</div>                           
-                            <h2 class="text-display-title">
-                            My key areas of expertise.
-                            </h2>     
-                            
-                            <p class="lead">
-                                This section highlights the core areas I have experience in as a  Computer
-                                 Science & Engineering student. It reflects the technologies I work with and my focus on practical learning.
-
-                            </p>
-                        </div> <div class="s-expertise__content-main grid-section-split__primary">
-
-                            <div class="grid-list-items list-items show-ctr">
-                                <div class="grid-list-items__item list-items__item">
-                                    <div class="grid-list-items__title list-items__item-header">
-                                        <h3 class="list-items__item-title">Web Development</h3>
-                                    </div>
-                                    <div class="grid-list-items__text list-items__item-text">
-                                        <p>
-                                            I build responsive and user-friendly websites using modern web technologies.
-                                            I focus on clean structure and practical functionality.
-
-                                        </p>
-                                    </div>
-                                </div> <div class="grid-list-items__item list-items__item">
-                                    <div class="grid-list-items__title list-items__item-header">
-                                        <h3 class="list-items__item-title">Programming & Problem Solving</h3>
-                                    </div>
-                                    <div class="grid-list-items__text list-items__item-text">
-                                        <p>
-                                            I enjoy solving logical problems and strengthening my core programming skills
-                                            through academic coursework and regular practice.
-
-                                        </p>
-                                    </div>
-                                </div> <div class="grid-list-items__item list-items__item">
-                                    <div class="grid-list-items__title list-items__item-header">
-                                        <h3 class="list-items__item-title">Backend & Databases</h3>
-                                    </div>
-                                    <div class="grid-list-items__text list-items__item-text">
-                                        <p>
-                                        I have experience working with basic backend concepts and databases, focusing on
-                                        structured storage and data handling.
-
-                                        </p>
-                                    </div>
-                                </div> <div class="grid-list-items__item list-items__item">
-                                    <div class="grid-list-items__title list-items__item-header">
-                                        <h3 class="list-items__item-title">Tools & Practices</h3>
-                                    </div>
-                                    <div class="grid-list-items__text list-items__item-text">
-                                        <p>
-                                        I use industry-standard tools to manage code and maintain organized development workflows.
-
-                                        </p>
-                                    </div>
-                                </div> </div> </div> </div> </div> </section> <section id="clients" class="s-clients">          
-
-                <div class="row s-clients__content-block width-sixteen-col">
-                    <div class="column xl-12 grid-block grid-section-split">
-                    
-                        <div class="section-header grid-section-split__header">
-
-                            <h2 class="text-display-title">
-                            Technologies and tools I use:
-                            </h2>
-                            <p class="lead">
-                                A snapshot of the tools and technologies I use while building and learning.
-                            </p>
-                        </div> <div class="grid-section-split__primary">
-                            <p class="lead">
-                             This section highlights the technologies I have used throughout my
-                                  academic coursework and personal projects.
-                            </p>   
-
-                            <p>
-                            As a passionate learner, I focus on building a
-                            strong technical foundation while gaining hands-on experience through
-                            real-world inspired projects. The tools shown here reflect
-                                what I actively use to design and develop software.
-                            </p>
-                        </div> </div> </div> <div class="row s-clients__content-block width-sixteen-col">
-                    <div class="column xl-12">
-                    
-                        <div class="clients-list">
-                            <div class="clients-list__item">
-                                <a href="#0">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
-                                    <span>HTML5</span>
-                                </a>
-                            </div>
-                            <div class="clients-list__item">
-                                <a href="#0">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
-                                    <span>CSS3</span>
-                                </a>
-                            </div>
-                            <div class="clients-list__item">
-                                <a href="#0">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
-                                    <span>JavaScript</span>
-                                </a>
-                            </div>
-                            <div class="clients-list__item">
-                                <a href="#0">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python">
-                                    <span>Python</span>
-                                </a>
-                            </div>
-                            <div class="clients-list__item">
-                                <a href="#0">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
-                                    <span>Node.js</span>
-                                </a>
-                            </div>
-                        </div> </div> </div> <div class="row s-clients__content-block width-sixteen-col">
-                    <div class="column xl-12 testimonials">
-                        <div class="swiper-container testimonials__slider home-slider">
-
-                            <div class="swiper-wrapper">
-
-                                <div class="testimonials__slide swiper-slide">
-                                    <p>
-                                        "Designed and implemented a robust database system to manage university elections,
-                                        ensuring secure, accurate, and efficient vote tracking."
-                                    </p>
-                                    <div class="testimonials__author">
-                                        <cite class="testimonials__cite">
-                                            <strong>University Election System</strong>
-                                            <span>Database Management (SQL)</span>
-                                        </cite>
-                                    </div>
-                                </div>
-
-                                <div class="testimonials__slide swiper-slide">
-                                    <p>
-                                        "I built the backend for a property website, making it easy for users to list homes and interact with site features smoothly."
-                                    </p>
-                                    <div class="testimonials__author">
-                                        <cite class="testimonials__cite">
-                                            <strong>Real Estate Portal</strong>
-                                            <span>Backend (Node.js)</span>
-                                        </cite>
-                                    </div>
-                                </div>
-
-                                <div class="testimonials__slide swiper-slide">
-                                    <p>
-                                        "Built a comprehensive Library Management System using OOP principles.
-                                        Implemented features for book issuance and inventory management."
-                                    </p>
-                                    <div class="testimonials__author">
-                                        <cite class="testimonials__cite">
-                                            <strong>Library Management System</strong>
-                                            <span>OOP (Java/C++)</span>
-                                        </cite>
-                                    </div>
-                                </div>
-
-                            </div> 
-                            <div class="swiper-pagination"></div>
-
-                        </div> 
-                    </div> 
-                </div>
-
-            </section> </section> <section id="cta" class="s-cta">
-
-            <div class="row row-x-center text-center">
-                <div class="column xl-8 lg-12">
-
-                    <div class="s-cta__content">
-                        <h2 class="text-display-title">
-                        Let's build something together.
-                        </h2>
-                        <p class="lead">
-                        I am currently seeking internship opportunities and open-source collaborations. If you're looking for a passionate developer to join your team, I'd love to hear from you.
-                        </p>
-                        <a href="contact.html" class="btn btn--primary">Get In Touch</a>
-                    </div>
-
-                </div>
-            </div>
-
-        </section> <section id="journal" class="s-journal">
-
-            <div class="row s-journal__content width-sixteen-col">
-                <div class="column xl-12 grid-block">
-
-                    <div class="grid-full section-header text-center">
-                        <h2 class="text-display-title">My learning journey.</h2>  
-                    </div> 
-
-                    <div class="grid-full s-journal__content-main grid-list-items">
-
-                        <div class="grid-list-items__item blog-card">
-                            <div class="blog-card__header">
-                                <div class="blog-card__cat-links"><a href="#0">Goal 1</a></div>
-                                <h3 class="blog-card__title">Current academic focus</h3>
-                            </div>
-                            <div class="blog-card__text">
-                                <p>Deepening my understanding of Database Management and Backend architectures through university coursework.</p>
-                            </div>
-                        </div>
-
-                        <div class="grid-list-items__item blog-card">
-                            <div class="blog-card__header">
-                                <div class="blog-card__cat-links"><a href="#0">Goal 2</a></div>
-                                <h3 class="blog-card__title">Building in public</h3>
-                            </div>
-                            <div class="blog-card__text">
-                                <p>I use GitHub to track my progress and commit code daily as I learn new frameworks like React and Node.js.</p>
-                            </div>
-                        </div>
-
-                        <div class="grid-list-items__item blog-card">
-                            <div class="blog-card__header">
-                                <div class="blog-card__cat-links"><a href="#0">Goal 3</a></div>
-                                <h3 class="blog-card__title">Problem solving</h3>
-                            </div>
-                            <div class="blog-card__text">
-                                <p>Practicing Data Structures and Algorithms to sharpen my logical thinking for technical challenges.</p>
-                            </div>
-                        </div>
-
-                    </div> 
-
-                </div>
-            </div>
-
-        </section> <footer class="s-footer">
-            <div class="row s-footer__content">
-                <div class="column xl-6 lg-6 md-12 s-footer__block s-footer__about">                    
-                    <h3>About Seba</h3>
-                    <p>
-                        Seba | 3rd-Year CSE Student at UAP. Focused on Full-Stack development and algorithmic problem solving. Passionate about learning and building tools that make a difference.
-                    </p>               
-                </div>                
-                <div class="column xl-3 lg-6 md-12 s-footer__block s-footer__site-links">
-                    <h3>Site Links</h3>
-                    <ul class="link-list">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Projects</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>    
-            
-            <div class="row s-footer__bottom">
-                <div class="column xl-6 lg-12">
-                    <ul class="s-footer__social social-list">
-                        <li>
-                            <a href="https://www.facebook.com/sadiyaakter.seba" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);"><path d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325,1.42-3.592,3.5-3.592 c0.699-0.002,1.399,0.034,2.095,0.107v2.42h-1.435c-1.128,0-1.348,0.538-1.348,1.325v1.735h2.697l-0.35,2.725h-2.348V21H20 c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z"></path></svg>
-                                <span class="u-screen-reader-text">Facebook</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/_na_biiiieee_" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);"><path d="M11.999,7.377c-2.554,0-4.623,2.07-4.623,4.623c0,2.554,2.069,4.624,4.623,4.624c2.552,0,4.623-2.07,4.623-4.624 C16.622,9.447,14.551,7.377,11.999,7.377L11.999,7.377z M11.999,15.004c-1.659,0-3.004-1.345-3.004-3.003 c0-1.659,1.345-3.003,3.004-3.003s3.002,1.344,3.002,3.003C15.001,13.659,13.658,15.004,11.999,15.004L11.999,15.004z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533,6.111c-0.469-1.209-1.424-2.165-2.633-2.632c-0.699-0.263-1.438-0.404-2.186-0.42 c-0.963-0.042-1.268-0.054-3.71-0.054s-2.755,0-3.71,0.054C7.548,3.074,6.809,3.215,6.11,3.479C4.9,3.946,3.945,4.902,3.477,6.111 c-0.263,0.7-0.404,1.438-0.419,2.186c-0.043,0.962-0.056,1.267-0.056,3.71c0,2.442,0,2.753,0.056,3.71 c0.015,0.748,0.156,1.486,0.419,2.187c0.469,1.208,1.424,2.164,2.634,2.632c0.696,0.272,1.435,0.426,2.185,0.45 c0.963,0.042,1.268,0.055,3.71,0.055s2.755,0,3.71-0.055c0.747-0.015,1.486-0.157,2.186-0.419c1.209-0.469,2.164-1.424,2.633-2.633 c0.263-0.7,0.404-1.438,0.419-2.186c0.043-0.962,0.056-1.267,0.056-3.71s0-2.753-0.056-3.71C20.941,7.57,20.801,6.819,20.533,6.111z M19.315,15.643c-0.007,0.576-0.111,1.147-0.311,1.688c-0.305,0.787-0.926,1.409-1.712,1.711c-0.535,0.199-1.099,0.303-1.67,0.311 c-0.95,0.044-1.218,0.055-3.654,0.055c-2.438,0-2.687,0-3.655-0.055c-0.569-0.007-1.135-0.112-1.669-0.311 c-0.789-0.301-1.414-0.923-1.719-1.711c-0.196-0.534-0.302-1.099-0.311-1.669c-0.043-0.95-0.053-1.218-0.053-3.654 c0-2.437,0-2.686,0.053-3.655c0.007-0.576,0.111-1.146,0.311-1.687c0.305-0.789,0.93-1.41,1.719-1.712 c0.534-0.198,1.1-0.303,1.669-0.311c0.951-0.043,1.218-0.055,3.655-0.055c2.437,0,2.687,0,3.654,0.055 c0.571,0.007,1.135,0.112,1.67,0.311c0.786,0.303,1.407,0.925,1.712,1.712c0.196,0.534,0.302,1.099,0.311,1.669 c0.043,0.951,0.054,1.218,0.054,3.655c0,2.436,0,2.698-0.043,3.654H19.315z"></path></svg>
-                                <span class="u-screen-reader-text">Instagram</span>
-                            </a>
-                        </li>
-                    </ul> 
-                </div>
-
-                <div class="ss-go-top">
-                    <a class="smoothscroll" title="Back to Top" href="#top">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#ffffff" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 11 12 6 7 11"></polyline><line x1="12" y1="18" x2="12" y2="6"></line></svg>
-                    </a>
-                </div> 
-            </div>
-            
-        </footer> 
-
-    </div> 
-
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-
+  <script type="module" src="src/main.js"></script>
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
 </body>
+
 </html>
