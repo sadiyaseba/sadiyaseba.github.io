@@ -12,32 +12,89 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="src/style.css" />
-  <!-- DevIcons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-  <!-- Lucide Icons Script (Development only, usually bundled) -->
   <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Responsive Navigation Fixes */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      position: relative;
+    }
+
+    .header__nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    /* Hamburger Menu Button (Hidden on Desktop) */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: inherit;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        order: 3;
+      }
+
+      .header__cta-box {
+        display: none; /* Hide CTA on small mobile to save space */
+      }
+
+      .header__nav {
+        display: none; /* Hide by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff; /* Match your background color */
+        padding: 1rem 0;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        z-index: 1000;
+        text-align: center;
+        gap: 1rem;
+      }
+
+      /* When menu is toggled open */
+      .header__nav.is-active {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <!-- ========== HEADER ========== -->
   <header class="header">
     <a href="#" class="header__logo">Seba<span>.</span></a>
-    <nav class="header__nav">
+    
+    <button class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle Menu">
+      <i data-lucide="menu"></i>
+    </button>
+
+    <nav class="header__nav" id="header-nav">
       <a href="#about">About</a>
       <a href="#education">Education</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
+    
     <div class="header__cta-box">
       <span>Let's work together</span>
       <div class="cta-dot"></div>
     </div>
   </header>
 
-  <!-- ========== HERO ========== -->
   <section class="hero" id="hero">
-    <!-- Floating decorative elements -->
     <div class="hero__floating-shapes">
       <div class="floating-orb floating-orb--1"></div>
       <div class="floating-orb floating-orb--2"></div>
@@ -64,7 +121,6 @@
     </div>
   </section>
 
-  <!-- ========== ABOUT ========== -->
   <section class="section" id="about">
     <h2 class="section__title">About Me</h2>
     <div class="about__container">
@@ -99,14 +155,11 @@
         </div>
       </div>
     </div>
-    </div>
   </section>
 
-  <!-- ========== EDUCATION (Shifted Up) ========== -->
   <section class="section section--muted" id="education">
     <h2 class="section__title">Education</h2>
     <div class="education-timeline">
-      <!-- Item 1 -->
       <article class="education-card">
         <div class="education-card__icon-wrapper">
           <i data-lucide="graduation-cap" class="education-card__icon"></i>
@@ -121,7 +174,6 @@
           </div>
         </div>
       </article>
-      <!-- Item 2 -->
       <article class="education-card">
         <div class="education-card__icon-wrapper">
           <i data-lucide="book-open" class="education-card__icon"></i>
@@ -135,7 +187,6 @@
           </div>
         </div>
       </article>
-      <!-- Item 3 -->
       <article class="education-card">
         <div class="education-card__icon-wrapper">
           <i data-lucide="school" class="education-card__icon"></i>
@@ -152,7 +203,6 @@
     </div>
   </section>
 
-  <!-- ========== ACHIEVEMENTS ========== -->
   <section class="section" id="achievements">
     <h2 class="section__title">Achievements</h2>
     <p class="section__subtitle">My small academic achievements. I am continuing to work hard to add more in this list
@@ -184,11 +234,9 @@
     </div>
   </section>
 
-  <!-- ========== TECHNICAL SKILLS ========== -->
   <section class="section" id="skills">
     <h2 class="section__title">Technical Skills</h2>
     <div class="skills-grid-modern">
-      <!-- Languages -->
       <div class="skill-group">
         <div class="skill-group__header">
           <i data-lucide="code-2" class="skill-group__icon"></i>
@@ -203,7 +251,6 @@
           <span class="skill-pill"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
         </div>
       </div>
-      <!-- Web Tech -->
       <div class="skill-group">
         <div class="skill-group__header">
           <i data-lucide="globe" class="skill-group__icon"></i>
@@ -217,7 +264,6 @@
           <span class="skill-pill"><i class="devicon-nodejs-plain colored"></i> Node.js (Basic)</span>
         </div>
       </div>
-      <!-- Database -->
       <div class="skill-group">
         <div class="skill-group__header">
           <i data-lucide="database" class="skill-group__icon"></i>
@@ -230,7 +276,6 @@
           <span class="skill-pill"><i data-lucide="layers"></i> Schema Design</span>
         </div>
       </div>
-      <!-- Tools -->
       <div class="skill-group">
         <div class="skill-group__header">
           <i data-lucide="wrench" class="skill-group__icon"></i>
@@ -247,7 +292,6 @@
     </div>
   </section>
 
-  <!-- ========== RESEARCH ROADMAP ========== -->
   <section class="section section--muted research" id="research">
     <h2 class="section__title">Research Focus</h2>
     <p class="section__subtitle">Currently researching on Cryptocurrency & P2P Systems</p>
@@ -255,7 +299,6 @@
     <div class="research-roadmap">
       <div class="roadmap-line"></div>
 
-      <!-- Node 1 -->
       <div class="roadmap-node">
         <div class="roadmap-node__icon">
           <i data-lucide="network"></i>
@@ -266,7 +309,6 @@
         </div>
       </div>
 
-      <!-- Node 2 -->
       <div class="roadmap-node">
         <div class="roadmap-node__icon">
           <i data-lucide="shield-check"></i>
@@ -277,7 +319,6 @@
         </div>
       </div>
 
-      <!-- Node 3 -->
       <div class="roadmap-node">
         <div class="roadmap-node__icon">
           <i data-lucide="lock"></i>
@@ -288,7 +329,6 @@
         </div>
       </div>
 
-      <!-- Node 4 -->
       <div class="roadmap-node">
         <div class="roadmap-node__icon">
           <i data-lucide="zap"></i>
@@ -301,7 +341,6 @@
     </div>
   </section>
 
-  <!-- ========== PROJECTS ========== -->
   <section class="section section--muted" id="projects">
     <h2 class="section__title">Featured Projects</h2>
     <div class="projects-grid">
@@ -350,7 +389,6 @@
     </div>
   </section>
 
-  <!-- ========== CONTACT ========== -->
   <section class="section contact" id="contact">
     <h2 class="section__title">Let's Build Something Together</h2>
     <p class="contact__description">I'm seeking internship opportunities and open-source collaborations. If you're
@@ -375,7 +413,6 @@
     </div>
   </section>
 
-  <!-- ========== FOOTER ========== -->
   <footer class="footer">
     <p class="footer__text">&copy; 2026 Seba. All rights reserved.</p>
   </footer>
@@ -384,6 +421,21 @@
   <script>
     // Initialize Lucide icons
     lucide.createIcons();
+
+    // Responsive Menu Toggle Script
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const nav = document.getElementById('header-nav');
+
+    menuBtn.addEventListener('click', () => {
+      nav.classList.toggle('is-active');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.header__nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('is-active');
+      });
+    });
   </script>
 </body>
 
